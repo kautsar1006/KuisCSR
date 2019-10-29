@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<htmlxmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<style type="text/css">
+body {
+	background-image:
+		url("https://www.realita.news/wp-content/uploads/2018/10/Mandiri.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+</style>
+
+<title>Create New CSR</title>
+</head>
+<body>
+<div class="container">
+	<div align="center">
+		<h1 class="font-weight-bold text-monospace text-danger"
+			style="margin-top: 25px">Create New CSR</h1>
+		<br />
+		<hr>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${csr}" method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td class="font-weight-bold text-danger">CSR Name:</td>
+					<td><input class="form-control"
+						placeholder="Please Input You're CSR Name" type="text"
+						th:field="*{name}" /></td>
+				</tr>
+				<tr>
+					<td class="font-weight-bold text-danger">CSR Category:</td>
+					<td><select class="form-control" name="category"
+						th:field="*{category}">
+							<option value="">Please Choose Youre CSR Category</option>
+							<option value="Pendidikan">Pendidikan</option>
+							<option value="Kesehatan">Kesehatan</option>
+							<option value="Masyarakat">Masyarakat</option>
+							<option value="Lingkungan Hidup">Lingkungan Hidup</option>
+					</select>
+				</tr>
+				<tr>
+					<td class="font-weight-bold text-danger">CSR Location:</td>
+					<td><select class="form-control" name="location"
+						th:field="*{location}">
+							<option value="">Please Choose Youre CSR Location</option>
+							<option value="DKI Jakarta">DKI Jakarta</option>
+							<option value="Banten">Banten</option>
+							<option value="Jawa Barat">Jawa Barat</option>
+							<option value="Jawa Tengah">Jawa Tengah</option>
+							<option value="DI Yogyakarta">DI Yogyakarta</option>
+							<option value="Jawa Timur">Jawa Timur</option>
+					</select>
+				</tr>
+				<tr>
+					<td class="font-weight-bold text-danger">Plan Date:</td>
+					<td><input class="form-control" type="date"
+						th:field="*{plandate}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="submit" class="btn btn-danger btn-lg btn-block">Save</button>
+						<br> <a href="/" class="text-decoration-none"><button
+								type="button" class="btn btn-danger btn-lg btn-block">Back</button></a>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
